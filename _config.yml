@@ -1,0 +1,7 @@
+title: Rachel Web Player
+email: contact@aurorafoss.org
+description: Seamless music player
+
+markdown: kramdown
+
+exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build"]
