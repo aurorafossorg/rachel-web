@@ -96,16 +96,16 @@ require([
 		$(window).resize(_.throttle(resize,100));
 		resize();
 
-    var 
-    shown = false,
-    checkAd = function(){
-      if(RWP.showAd() && !shown){
-        $.getScript('http://s3.buysellads.com/ac/bsa.js');
-        shown = true;
-      }
-    };
-    RWP.showAd.subscribe(checkAd);
-    checkAd();
+	var
+	shown = false,
+	checkAd = function(){
+	  if(RWP.showAd() && !shown){
+		$.getScript('http://s3.buysellads.com/ac/bsa.js');
+		shown = true;
+	  }
+	};
+	RWP.showAd.subscribe(checkAd);
+	checkAd();
 	});
 </script>
 </body>
