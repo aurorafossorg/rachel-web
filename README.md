@@ -76,4 +76,4 @@ You can fork the source code, report issues or feature request on our [gitlab](h
 ## License
 
 - Copyright (C) 2015 Adrian C Shum
-- Copyright (C) 2018 Aurora Free Open Source Software.
+- Copyright (C) 2018 Aurora Free Open Source Software
