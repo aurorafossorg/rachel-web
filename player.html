@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>SCM Music Player</title>
+<title>Rachel Web Player</title>
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/png" href="icon.png" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
@@ -14,7 +14,7 @@ body{overflow:hidden; background:transparent; }
 #playerW{z-index:2; left:0; right:0; height:0;}
 #content{ position:relative; height:100%; width:100%;  }
 </style>
-<link rel="stylesheet" type="text/css" href="css/scm.css?168" />
+<link rel="stylesheet" type="text/css" href="css/rwp.css?168" />
 <link rel="stylesheet" type="text/css" data-bind="attr:{href:skin}" id="skin" />
 </head>
 <body>
@@ -23,7 +23,7 @@ body{overflow:hidden; background:transparent; }
 <script type="text/javascript">
 (function(){
  	if(window==window.parent)
-		location.href = 'http://scmplayer.net';
+		location.href = 'https://rwplayer.aurorafoss.org';
 	var addEvent = function(elm, evType, fn) {
 			if(elm.addEventListener) 
 				elm.addEventListener(evType, fn);
@@ -35,15 +35,15 @@ body{overflow:hidden; background:transparent; }
 		url = location.hash.substr(1),
 		host = url.substr(0,url.indexOf('/',10));
 
-	window.SCMQueue = [];
+	window.RWPQueue = [];
 	addEvent(window,'message',function(e){
 		var data = e.data;
-		if(data.indexOf('SCM')!=0) 
+		if(data.indexOf('RWP')!=0) 
 			return;
-		if(window.SCM && window.Song)
-			(new Function("SCM,Song",data))(SCM,Song);
+		if(window.RWP && window.Song)
+			(new Function("RWP,Song",data))(RWP,Song);
 		else
-			SCMQueue.push(data);
+			RWPQueue.push(data);
 	});
 	url = url.replace(/(\%27|')/g, '%2527');
 	document.write('<iframe src="javascript:location.replace(\''+url+'\');" frameborder="0" id="content" allowtransparency="true" name="content"></iframe>');
@@ -63,21 +63,21 @@ require([
 	'knockout','jquery','underscore',
 	'text!view/player.html',
 	'text!view/playlist.html',
-	'scm','song','scm.ui',
+	'rwp','song','rwp.ui',
 
 	'binding/slider',
-	'binding/scm'
-	],function(ko,$,_,playerView,playlistView,SCM,Song){
+	'binding/rwp'
+	],function(ko,$,_,playerView,playlistView,RWP,Song){
 		$("#playerW").html(playerView);
 		$("#playlistW").html(playlistView);
 
-		var config = SCM.config;
-		SCM.config = _.once(function(data){
+		var config = RWP.config;
+		RWP.config = _.once(function(data){
 			config(data);
-			ko.applyBindings(SCM,$('#skin').get(0));
+			ko.applyBindings(RWP,$('#skin').get(0));
 			setTimeout(function(){
 				$('#contentW,#playerW,#playlistW').each(function(){
-					ko.applyBindings(SCM,this);
+					ko.applyBindings(RWP,this);
 					$(this).mousedown(function(){
 						return false;
 					});
@@ -85,9 +85,9 @@ require([
 			},200);
 		});
 
-		while(SCMQueue.length > 0)
-			(new Function('SCM,Song',SCMQueue.shift()))(SCM,Song);
-		window.SCM = SCM;
+		while(RWPQueue.length > 0)
+			(new Function('RWP,Song',RWPQueue.shift()))(RWP,Song);
+		window.RWP = RWP;
 		window.Song = Song;
 
 		var resize = function(){
@@ -99,12 +99,12 @@ require([
     var 
     shown = false,
     checkAd = function(){
-      if(SCM.showAd() && !shown){
+      if(RWP.showAd() && !shown){
         $.getScript('http://s3.buysellads.com/ac/bsa.js');
         shown = true;
       }
     };
-    SCM.showAd.subscribe(checkAd);
+    RWP.showAd.subscribe(checkAd);
     checkAd();
 	});
 </script>

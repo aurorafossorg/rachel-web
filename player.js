@@ -36,12 +36,13 @@ directly send an email to: contact (at) aurorafoss.org .
 		head = document.getElementsByTagName("head")[0],
 		dest = location.href.replace(/rachelplayer\=true/g, 'rwplayer=false'),
 		destHost = dest.substr(0, dest.indexOf('/', 10)),
-		scm = current.getAttribute('src').replace(/player\.js.*/g, 'player.html') + '#' + dest,
-		scmHost = scm.substr(0, scm.indexOf('/', 10)),
+		rwp = current.getAttribute('src').replace(/player\.js.*/g, 'player.html') + '#' + dest,
+		rwpHost = rwp.substr(0, rwp.indexOf('/', 10)),
 		isOutside = !hasFrame || location.href.indexOf("rwplayer=true") > 0,
 		postMessage = function (msg)
 		{
-			return window.top.document.getElementById('rwpframe').contentWindow.postMessage(msg, scmHost);
+			return window.top.document.getElementById('rwpframe')
+				.contentWindow.postMessage(msg, rwpHost);
 		},
 		postFactory = function (obj, keys)
 		{
@@ -102,7 +103,7 @@ directly send an email to: contact (at) aurorafoss.org .
 			var css = 'html,body{overflow:hidden;} body{margin:0;padding:0;border:0;} img,a,embed,object,div,address,table,iframe,p,span,form,header,section,footer{ display:none;border:0;margin:0;padding:0; }  #tumblr_controls{display:none;} #rwpframe{display:block; background-color:transparent; position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:1667;} ';
 			var style = document.createElement('style');
 			style.type = 'text/css';
-			style.id = 'scmcss';
+			style.id = 'rwpcss';
 			if (style.styleSheet) style.styleSheet.cssText = css;
 			else style.appendChild(document.createTextNode(css));
 			head.appendChild(style);
@@ -110,7 +111,7 @@ directly send an email to: contact (at) aurorafoss.org .
 			rwpframe.frameBorder = 0;
 			rwpframe.id = "rwpframe";
 			rwpframe.allowTransparency = true;
-			rwpframe.src = scm;
+			rwpframe.src = rwp;
 			document.body.insertBefore(rwpframe, document.body.firstChild);
 			var resize = function ()
 			{

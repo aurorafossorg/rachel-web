@@ -1,23 +1,23 @@
-define(['scm','jquery'],function(SCM,$){
+define(['rwp','jquery'],function(RWP,$){
 	var sound, playObserve, volumeObserve, positionObserve;
 
 	function on(url,finishCallback){
 		sound = soundManager.createSound({
-			id:'SCMSoundManager',
+			id:'RWPSoundManager',
 			url:url,
-			autoPlay:SCM.isPlay(),
-			volume:SCM.volume(),
+			autoPlay:RWP.isPlay(),
+			volume:RWP.volume(),
 			whileloading:loading,
 			whileplaying:playing,
 			onfinish:finishCallback,
 			onload:function(success){
 				if(!success && !sound.bytesTotal)
-					SCM.message('Error: Request not Found');
+					RWP.message('Error: Request not Found');
 			}
 		});
-		playObserve = SCM.isPlay.subscribe(play);
-		volumeObserve = SCM.volume.subscribe(volume);
-		positionObserve = SCM.seekPosition.subscribe(position);
+		playObserve = RWP.isPlay.subscribe(play);
+		volumeObserve = RWP.volume.subscribe(volume);
+		positionObserve = RWP.seekPosition.subscribe(position);
 
 	}
 	function off(){
@@ -38,14 +38,14 @@ define(['scm','jquery'],function(SCM,$){
 		sound.setPosition(value*1000);
 	}
 	function loading(){
-		SCM.loadedFraction(
+		RWP.loadedFraction(
 			sound.bytesTotal>0 ? 
 			sound.bytesLoaded/sound.bytesTotal : 0
 		);
 	}
 	function playing(){
-		SCM.position(sound.position/1000);
-		SCM.duration(sound.durationEstimate/1000);
+		RWP.position(sound.position/1000);
+		RWP.duration(sound.durationEstimate/1000);
 	}
 
 	return {

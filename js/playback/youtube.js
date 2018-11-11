@@ -1,9 +1,9 @@
 define([
-	'scm','jquery',
+	'rwp','jquery',
 	'http://www.youtube.com/iframe_api'
-	],function(SCM,$){
+	],function(RWP,$){
 
-	var id="SCMYoutube",
+	var id="RWPYoutube",
 		callback, finishCallback, player, intervalId,
 		playObserve, volumeObserve, positionObserve;
 
@@ -26,14 +26,14 @@ define([
 
 	function on(url,onFinish){
 		finishCallback = onFinish;
-		playObserve = SCM.isPlay.subscribe(play);
-		volumeObserve = SCM.volume.subscribe(volume);
-		positionObserve = SCM.seekPosition.subscribe(position);
+		playObserve = RWP.isPlay.subscribe(play);
+		volumeObserve = RWP.volume.subscribe(volume);
+		positionObserve = RWP.seekPosition.subscribe(position);
 		intervalId = setInterval(interval,100);
 
 		var videoId = parseVideoId(url);
-		player.setVolume(SCM.volume());
-		if(SCM.isPlay())
+		player.setVolume(RWP.volume());
+		if(RWP.isPlay())
 			player.loadVideoById(videoId);
 		else
 			player.cueVideoById(videoId);
@@ -58,9 +58,9 @@ define([
 		player.seekTo(value);
 	}
 	function interval(){
-		SCM.loadedFraction(player.getVideoLoadedFraction());
-		SCM.position(player.getCurrentTime());
-		SCM.duration(player.getDuration());
+		RWP.loadedFraction(player.getVideoLoadedFraction());
+		RWP.position(player.getCurrentTime());
+		RWP.duration(player.getDuration());
 	}
 	function stateChange(e){
 		switch(e.data){
@@ -75,7 +75,7 @@ define([
 			case 101: msg += ': Cannot be played in embedded player'; break;
 			case 100: msg += ': Request not Found'; break;
 		}
-		if(e.data!=5) SCM.message(msg);
+		if(e.data!=5) RWP.message(msg);
 	}
 	function parseVideoId(url){
 		var prefix = '(v=|/v/|youtu.be/)';

@@ -15,7 +15,7 @@ var requirejs = ({
 		'domready': 'lib/require/domready'
 	},
 	config:{
-		'scm':{
+		'rwp':{
 			playback:{
 				'youtube':'(youtube.com|youtu.be)',
 				'soundcloud':'^http(s)?\:\/\/soundcloud.com',

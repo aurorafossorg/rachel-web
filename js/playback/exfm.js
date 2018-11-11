@@ -1,4 +1,4 @@
-define(["scm", "playback/soundmanager!", "jquery"], function(SCM, sm, $) {
+define(["rwp", "playback/soundmanager!", "jquery"], function(RWP, sm, $) {
 	return {
 		load: function(name, req, callback, config) {
 			var current;

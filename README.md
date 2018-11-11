@@ -57,7 +57,7 @@ Set whether playback order should be shuffled. Accepts a boolean x `true` or `fa
 Set whether playlist is being shown. Accepts a boolean x 	`true` or `false`.
 
 ## Credits
-SCM Music Player is made possible with these open source projects:
+Rachel Web Player is made possible with these open source projects:
 
 * [Soundmanager 2](http://www.schillmania.com/projects/soundmanager2/) - Javascript Sound API supporting HTML5.
 * [Knockout.js](http://knockoutjs.com/) - Javascript MVVM framework does data binding and dependency tracking.
