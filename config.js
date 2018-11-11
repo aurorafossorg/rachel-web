@@ -10,7 +10,6 @@ var requirejs = ({
 		'jquery.scrollto': 'lib/jquery/jquery.scrollTo.min',
 		'underscore': 'https://static.aurorafoss.org/aurorafoss/pub/web/underscore.js/1.4.1/js/underscore-min',
 		'knockout':'https://static.aurorafoss.org/aurorafoss/pub/web/knockout/2.1.0/js/knockout-min',
-
 		'text': 'lib/require/text',
 		'domready': 'lib/require/domready'
 	},
