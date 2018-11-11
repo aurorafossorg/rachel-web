@@ -1,6 +1,6 @@
 define([
 	'rwp','jquery',
-	'http://www.youtube.com/iframe_api'
+	'https://www.youtube.com/iframe_api'
 	],function(RWP,$){
 
 	var id="RWPYoutube",
