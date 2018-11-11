@@ -71,9 +71,9 @@ You can fork the source code, report issues or feature request on our [gitlab](h
 
 ## FAQ
 
-**Why this player no longer support Flash for older browsers?** Just because Adobe Flash Player doesn't meet Free Software rules and we want freedom for everyone. You can, however fork the project and make your changes.
+**Why this player no longer support Flash for older browsers?** Just because Adobe Flash Player doesn't meet Free Software rules and we want freedom for everyone. Also, Flash is already deprecated for almost all browsers. You can, however fork the project and make your changes.
 
 ## License
 
-Copyright (C) 2015 Adrian C Shum
-Copyright (C) 2018 Aurora Free Open Source Software.
+- Copyright (C) 2015 Adrian C Shum
+- Copyright (C) 2018 Aurora Free Open Source Software.
