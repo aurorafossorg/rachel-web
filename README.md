@@ -1,4 +1,4 @@
-# Rachel Web Player
+# Rachel Web Player [![Build](https://api.travis-ci.org/aurorafossorg/rachel-web.svg?branch=master)](https://travis-ci.org/aurorafossorg/rachel-web) [![Pipeline](https://gitlab.com/aurorafossorg/rachel-web/badges/master/pipeline.svg)](https://gitlab.com/aurorafossorg/rachel-web/pipelines)
 
 ## Introduction
 
