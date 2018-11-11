@@ -15,10 +15,10 @@ Rachel Web Player is a HTML5 Music Player based on SCM Music Player. It is a fre
 
 Normally you don't need to download anything to use Rachel Web Player. Just go to https://rwplayer.aurorafoss.org/ and get the script via Setup Wizard. But if you want to self host or customize the source code, you are free to do it, according to `LICENSE` file.
 
-For a minimal player setup you should load `rwplayer.js` script into your web page:
+For a minimal player setup you should load `player.js` script into your web page:
 
 ```html
-<script type="text/javascript" src="rwplayer.js"></script>
+<script type="text/javascript" src="player.js"></script>
 ```
 
 To start with, place files into your server, run __index.html__ and you will be redirected to the Setup Wizard, configured for your self hosted Rachel Web Player.
@@ -26,7 +26,7 @@ To start with, place files into your server, run __index.html__ and you will be 
 ## API
 Rachel Web Player provides full featured control on your music. Apart from Setup Wizard, you can also control Rachel Web Player via Javascript. The script exposes RWP to global scope with the following methods.
 
-#### RWP.play() 
+#### RWP.play();
 Plays the current song.
 #### RWP.pause();
 Pause the currently playing song.
@@ -74,6 +74,8 @@ You can fork the source code, report issues or feature request on our [gitlab](h
 **Why this player no longer support Flash for older browsers?** Just because Adobe Flash Player doesn't meet Free Software rules and we want freedom for everyone. Also, Flash is already deprecated for almost all browsers. You can, however fork the project and make your changes.
 
 ## License
+
+GNU General Public License Version 3, 29 June 2007
 
 - Copyright (C) 2015 Adrian C Shum
 - Copyright (C) 2018 Aurora Free Open Source Software
