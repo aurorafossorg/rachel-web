@@ -29,14 +29,22 @@ directly send an email to: contact (at) aurorafoss.org .
 
 (function ()
 {
-	var hasFrame = window.parent != window,
-		scripts = document.getElementsByTagName('script'),
+	var scripts = document.getElementsByTagName('script'),
 		current = scripts[scripts.length - 1],
+		rwpsrc = current.getAttribute('src');
+
+	if (rwpsrc.indexOf('//') == -1)
+		if (rwpsrc.substr(0, 1) == '/')
+			rwpsrc = window.location.origin + rwpsrc;
+		else
+			rwpsrc = window.location.origin + window.location.pathname + "/" + rwpsrc;
+
+	var hasFrame = window.parent != window,
 		config = current.getAttribute('data-config'),
 		head = document.getElementsByTagName("head")[0],
-		dest = location.href.replace(/rachelplayer\=true/g, 'rwplayer=false'),
+		dest = location.href.replace(/rwplayer\=true/g, 'rwplayer=false'),
 		destHost = dest.substr(0, dest.indexOf('/', 10)),
-		rwp = current.getAttribute('src').replace(/player\.js.*/g, 'player.html') + '#' + dest,
+		rwp = rwpsrc.replace(/player\.js.*/g, 'player.html') + '#' + dest,
 		rwpHost = rwp.substr(0, rwp.indexOf('/', 10)),
 		isOutside = !hasFrame || location.href.indexOf("rwplayer=true") > 0,
 		postMessage = function (msg)
