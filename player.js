@@ -97,8 +97,6 @@ directly send an email to: contact (at) aurorafoss.org .
 			while (div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->', all[0]);
 			return v > 4 ? v : undef;
 		})(),
-		isMobile = navigator.userAgent.match(/iPad|iPhone|Android|Blackberry/i),
-		isIPad = navigator.userAgent.match(/iPad/i),
 		init = function ()
 		{
 			if (!document.body)
@@ -234,10 +232,7 @@ directly send an email to: contact (at) aurorafoss.org .
 		'loadPlaylist,repeatMode,isShuffle,showPlaylist,' +
 		'togglePlaylist,toggleShuffle,changeRepeatMode');
 	if (window.RWP && window.RWPMusicPlayer) return;
-	if (!isMobile)
-	{
-		init();
-	}
+	init();
 	if (config) postConfig(config);
 	RWP.init = postConfig;
 	window.RWPMusicPlayer = window.RWPMusicPlayer || RWP;
