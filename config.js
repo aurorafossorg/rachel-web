@@ -5,13 +5,13 @@ var requirejs = ({
 		'jquery.scrollto': {deps: ['jquery'],exports: 'jQuery'}
 	},
 	paths: {
-		'jquery': 'https://static.aurorafoss.org/aurorafoss/pub/web/jquery/1.8.2/js/jquery.min',
-		'jquery.ui': 'https://static.aurorafoss.org/aurorafoss/pub/web/jqueryui/1.8.23/js/jquery-ui.min',
-		'jquery.scrollto': 'lib/jquery/jquery.scrollTo.min',
-		'underscore': 'https://static.aurorafoss.org/aurorafoss/pub/web/underscore.js/1.4.1/js/underscore-min',
-		'knockout':'https://static.aurorafoss.org/aurorafoss/pub/web/knockout/2.1.0/js/knockout-min',
-		'text': 'lib/require/text',
-		'domready': 'lib/require/domready'
+		'jquery': 'https://static.aurorafoss.org/aurorafoss/pub/web/jquery/3.3.1/js/jquery.min',
+		'jquery.ui': 'https://static.aurorafoss.org/aurorafoss/pub/web/jqueryui/1.12.1/jquery-ui.min',
+		'jquery.scrollto': 'https://static.aurorafoss.org/aurorafoss/pub/web/jquery-scrollTo/2.1.2/js/jquery.scrollTo.min',
+		'underscore': 'https://static.aurorafoss.org/aurorafoss/pub/web/underscore.js/1.9.1/js/underscore-min',
+		'knockout':'https://static.aurorafoss.org/aurorafoss/pub/web/knockout/3.4.2/js/knockout-min',
+		'text': 'https://static.aurorafoss.org/aurorafoss/pub/web/require-text/2.0.12/js/text.min',
+		'domready': 'https://static.aurorafoss.org/aurorafoss/pub/web/require-domReady/2.0.1/domReady.min'
 	},
 	config:{
 		'rwp':{
