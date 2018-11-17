@@ -1,7 +1,21 @@
 title: Rachel Web Player
-email: contact@aurorafoss.org
+email: admin@aurorafoss.org
+author: Aurora Free Open Source Software
 description: Seamless music player
 
+twitter: aurorafossorg
+facebook: aurorafossorg
+gitlab: aurorafossorg
+github: aurorafossorg
+discord_url: https://discord.gg/Tsb2gpk
+rss: rss
+
 markdown: kramdown
+
+theme: fuzzy-theme
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
 
 exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build"]
