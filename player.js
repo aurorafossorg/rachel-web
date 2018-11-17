@@ -35,9 +35,12 @@ directly send an email to: contact (at) aurorafoss.org .
 
 	if (rwpsrc.indexOf('//') == -1)
 		if (rwpsrc.substr(0, 1) == '/')
-			rwpsrc = window.location.origin + rwpsrc;
+			rwpsrc = location.origin + rwpsrc;
 		else
-			rwpsrc = window.location.origin + window.location.pathname + "/" + rwpsrc;
+		{
+			var rwppath = location.pathname;
+			rwpsrc = location.origin + rwppath.substr(0, rwppath.lastIndexOf("/")) + "/" + rwpsrc;
+		}
 
 	var hasFrame = window.parent != window,
 		config = current.getAttribute('data-config'),
