@@ -5,4 +5,10 @@ rvm:
   - 2.4
   - 2.5
 
+before_script:
+  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  - sudo apt-get update -y
+  - sudo apt-get install -y -q git-lfs
+  - git lfs install
+
 script: "bundle exec jekyll build"
