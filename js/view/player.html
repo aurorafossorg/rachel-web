@@ -1,3 +1,10 @@
+<style>
+	@media all and (max-width: 550px) {
+		.rwpmobile {
+			display: none;
+		}
+	}
+</style>
 <div id="player">
 	<div class="item button" data-bind="
 		click:previous,
@@ -17,12 +24,12 @@
 		click:next,
 		maskBtn:{css:'mainImage'}
 		" id="next"></div>
-	<div class="text" id="title" data-bind="
+	<div class="text rwpmobile" id="title" data-bind="
 		followLeft:'#seeker',
 		text:display
 		" >
 	</div>
-	<div class="item" data-bind="
+	<div class="item rwpmobile" data-bind="
 		slider:playedFraction, 
 		sliderOptions:{step:0.00001,min:0,max:1,pauseable:true}
 		" id="seeker">
@@ -33,7 +40,7 @@
 			"></div>
 	</div>
 	<div class="text" id="tooltip">
-		<a href="https://rwplayer.aurorafoss.org" target="_blank" >Rachel Web Player</a>
+		<a class="rwpmobile" href="https://rwplayer.aurorafoss.org" target="_blank" >Rachel Web Player</a>
 	</div>
 	<div class="text item" id="timer" data-bind="text:timer"></div>
 	<div class="item ui-slider-horizontal" data-bind="
