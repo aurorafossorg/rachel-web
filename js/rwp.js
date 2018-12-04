@@ -3,7 +3,7 @@ define([
 	"lib/knockout/pauseable"
 	],function(ko,_,module,Song){
 
-var	playback = null, 
+var	playback = null,
 	current = (function(){
 		var empty = new Song({title:""}),
 			song = ko.observable(empty);
@@ -109,7 +109,7 @@ var	playback = null,
 		var isPlay = ko.observable(false);
 		isPlay.subscribe(function(value){
 			//if current empty find stuff to play
-			if(value && !current().isValid()) 
+			if(value && !current().isValid())
 				next();
 		});
 		return isPlay;
